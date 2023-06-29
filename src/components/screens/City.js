@@ -8,6 +8,7 @@ import {
     View
 } from "react-native";
 import {Feather} from '@expo/vector-icons'
+import IconText from "../IconText";
 
 
 
@@ -18,16 +19,16 @@ export default function City() {
             <Text style={[styles.cityName, styles.cityText]}>London</Text>
             <Text style={[styles.countryName, styles.cityText]}>UK</Text>
             <View style={styles.populationWrapper}>
-            <Feather name="user-plus" size={50} color="red" />
-                    <Text style={styles.populationText}>80000</Text>
+                <IconText iconName = {'user'} iconColor = {'red'} bodyText={8000} bodyTextStyles={styles.populationText}/>
+                    {/* <Feather name="user-plus" size={50} color="red" />
+                    <Text style={styles.populationText}>80000</Text> */}
             </View>
             <View style={styles.riseSetWrapper}>
-                <Feather name="sunrise" size={50} color="white" />
-                <Text style={styles.riseSetText}>10:46:58am</Text>
-                <Feather name="sunset" size={50} color="white" />
-                <Text style={styles.riseSetText}>17:46:18pm</Text>
+                <IconText iconName={'sunrise'} iconColor={'white'} bodyText={'10:46:58am'} bodyTextStyles={styles.riseSetText}/>
 
-                <Text></Text>
+                
+                <IconText iconName={'sunset'} iconColor={'white'} bodyText={'17:46:58pm'} bodyTextStyles={styles.riseSetText}/>
+               
 
             </View>
 
@@ -55,7 +56,6 @@ const styles= StyleSheet.create({
     cityText:{
         justifyContent: 'center',
         alignSelf: 'center',
-        fontWeight: 'bold',
         color:'red',
     },
     populationWrapper:{
@@ -68,7 +68,6 @@ const styles= StyleSheet.create({
         fontSize: 25,
         marginLeft: 7.5,
         color: 'red',
-        fontWeight: 'bold'
     },
     riseSetWrapper:{
         flexDirection:'row',
@@ -79,6 +78,5 @@ const styles= StyleSheet.create({
     riseSetText:{
         fontSize: 20,
         color: 'white',
-        fontWeight: 'bold'
     }
 })
