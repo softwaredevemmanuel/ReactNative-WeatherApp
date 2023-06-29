@@ -29,34 +29,36 @@ export default function City() {
   return (
     <SafeAreaView style={container}>
         <ImageBackground 
-            source={require('../../../assets/city.jpg')} 
+            source={require('../../../assets/cloud.jpg')} 
             style = {imageLayout}>
+            
+            <View style = {styles.section}>
+                <Text style={[cityName, cityText]}>London</Text>
+                <Text style={[countryName, cityText]}>UK</Text>
+                <View style={[populationWrapper, rowLayout]}>
+                    <IconText 
+                    iconName = {'user'} 
+                    iconColor = {'white'} 
+                    bodyText={8000} 
+                    bodyTextStyles={populationText}/>
 
-            <Text style={[cityName, cityText]}>London</Text>
-            <Text style={[countryName, cityText]}>UK</Text>
-            <View style={[populationWrapper, rowLayout]}>
-                <IconText 
-                iconName = {'user'} 
-                iconColor = {'red'} 
-                bodyText={8000} 
-                bodyTextStyles={populationText}/>
+                </View>
+                <View style={[riseSetWrapper, rowLayout]}>
+                    <IconText 
+                        iconName={'sunrise'} 
+                        iconColor={'white'} 
+                        bodyText={'10:46:58am'} 
+                        bodyTextStyles={riseSetText}/>
 
-            </View>
-            <View style={[riseSetWrapper, rowLayout]}>
-                <IconText 
-                    iconName={'sunrise'} 
-                    iconColor={'white'} 
-                    bodyText={'10:46:58am'} 
-                    bodyTextStyles={riseSetText}/>
-
+                    
+                    <IconText 
+                        iconName={'sunset'} 
+                        iconColor={'black'} 
+                        bodyText={'17:46:58pm'} 
+                        bodyTextStyles={riseSetText}/>
                 
-                <IconText 
-                    iconName={'sunset'} 
-                    iconColor={'white'} 
-                    bodyText={'17:46:58pm'} 
-                    bodyTextStyles={riseSetText}/>
-               
 
+                </View>
             </View>
 
         </ImageBackground>
@@ -69,12 +71,18 @@ const styles= StyleSheet.create({
         flex : 1,
         marginTop: StatusBar.currentHeight || 0
     },
+    section:{
+        borderWidth: 3,
+        borderColor: 'white',
+        borderRadius: 16,
+        marginTop: 1
+    },
     imageLayout:{
         flex: 1,
     },
     cityName:{
    
-        fontSize: 40,
+        fontSize: 50,
        
     },
     countryName:{
@@ -83,7 +91,6 @@ const styles= StyleSheet.create({
     cityText:{
         justifyContent: 'center',
         alignSelf: 'center',
-        color:'red',
     },
     populationWrapper:{
         justifyContent:'center',
@@ -92,15 +99,14 @@ const styles= StyleSheet.create({
     populationText:{
         fontSize: 25,
         marginLeft: 7.5,
-        color: 'red',
     },
     riseSetWrapper:{
         justifyContent: 'space-around',
         marginTop: 30
     },
     riseSetText:{
-        fontSize: 20,
-        color: 'white',
+        fontSize: 25,
+        color: 'green'
     },
     rowLayout:{
         flexDirection:'row',

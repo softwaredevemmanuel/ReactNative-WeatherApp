@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         borderWidth: 2,
-        backgroundColor: 'pink'
+        borderColor: 'white',
+        backgroundColor: 'black'
     },
     temp_min:{
         color: 'green',

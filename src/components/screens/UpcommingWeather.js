@@ -59,7 +59,7 @@ export default function UpcommingWeather() {
             source={require('../../../assets/cloud.jpg')} 
             style={image}
         >   
-        <Text> Upcoming Weather</Text> 
+        <Text style={styles.header}> Upcoming Weather</Text> 
 
       <FlatList
         data={DATA}
@@ -80,6 +80,13 @@ const styles = StyleSheet.create({
     },
     image:{
         flex: 1
+    },
+    header:{
+      paddingTop: 40,
+      paddingBottom: 20,
+      fontSize: 20,
+      color: 'white',
+      textAlign: 'center'
     }
 
 })
