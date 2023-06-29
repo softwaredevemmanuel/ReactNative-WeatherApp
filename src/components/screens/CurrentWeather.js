@@ -1,26 +1,35 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons'; 
+import RowText from '../RowText';
 
 export default function CurrentWeather() {
+  const {wrapper, container, temp, feels, highlowWrapper, highlow, bodyWrapper, description, message} = styles
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={styles.container}>
+    <SafeAreaView style={wrapper}>
+      <View style={container}>
 
-      <FontAwesome5 name="cloud-sun" size={104} color="black" />
-        <Text style={styles.temp}>6</Text>
-        <Text style={styles.feels}>Feels like a 5</Text>
-        <View style={styles.highlowWrapper}>
-          <Text style={styles.highlow}>High: 8</Text>
-          <Text style={styles.highlow}>Low: 6</Text>
+        <FontAwesome5 name="cloud-sun" size={104} color="black" />
+          <Text style={temp}>6</Text>
+          <Text style={feels}>Feels like a 5</Text>
 
-        </View>
+          <RowText 
+            messageOne={'High: 8'} 
+            messageTwo={'Low: 6'} 
+            containerStyles={highlowWrapper} 
+            messageOneStyles={highlow} 
+            messageTwoStyles={highlow}
+            />
+      
       </View>
+      <RowText 
+            messageOne={'Its Sunny'} 
+            messageTwo={'Its Perfect t-shirt weather'} 
+            containerStyles={bodyWrapper} 
+            messageOneStyles={description} 
+            messageTwoStyles={message}
+            />
 
-      <View style={styles.bodyWrapper}>
-        <Text style={styles.description}>Its sunny</Text>
-        <Text style={styles.message}>Its perfect t-Shirt weather</Text>
-      </View>
     </SafeAreaView>
 
   );
@@ -32,21 +41,19 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor:'orange',
     alignItems: 'center',
-    // justifyContent: 'center',
+    justifyContent: 'center',
     marginTop: 30
   },
   temp: {
-    color: 'blue',
-    fontSize: 48
+    fontSize: 48,
   },
   feels: {
     fontSize: 30,
-    color: 'green'
 
   },
   highlow: {
-    color: 'red',
     fontSize: 20
 
   },
@@ -56,16 +63,20 @@ const styles = StyleSheet.create({
   bodyWrapper: {
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
-    backgroundColor: 'orange',
+    backgroundColor: 'black',
     paddingLeft: 25,
-    marginBottom: 40
+    paddingBottom: 40
   },
   description:{
     fontSize: 48,
+    color: 'white'
+
 
   },
   message:{
-    fontSize: 30
+    fontSize: 30,
+    color: 'white'
+
   }
 
 });
