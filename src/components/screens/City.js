@@ -34,7 +34,7 @@ export default function City() {
             
             <View style = {styles.section}>
                 <Text style={[cityName, cityText]}>London</Text>
-                <Text style={[countryName, cityText]}>UK</Text>
+                <Text style={[countryName, cityText]}>UKs</Text>
                 <View style={[populationWrapper, rowLayout]}>
                     <IconText 
                     iconName = {'user'} 
