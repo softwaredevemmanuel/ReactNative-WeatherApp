@@ -16,14 +16,28 @@ export default function Tabs() {
     <Tab.Navigator
         screenOptions={{
           tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'grey'
+          tabBarInactiveTintColor: 'grey',
+          tabBarStyle:{
+            backgroundColor: 'lightblue',
+
+          },
+          headerStyle: {
+            backgroundColor: 'lightblue',
+            
+          },
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 25,
+            color: 'tomato',
+            textAlign: 'center'
+          }
         }}>
         <Tab.Screen name={'Current'} component={CurrentWeather} options={{
           tabBarIcon: ({ focused }) => (
             <Feather
               name={'droplet'}
               size={25}
-              color={focused ? 'tomato' : 'black'} 
+              color={focused ? 'tomato' : 'black'}
               />)
         }} />
         <Tab.Screen name={'Upcoming'} component={UpcommingWeather} options={{
