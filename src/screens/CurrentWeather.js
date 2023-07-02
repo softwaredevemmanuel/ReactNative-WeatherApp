@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground} from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons'; 
-import RowText from '../RowText';
+import RowText from '../components/RowText';
 
 export default function CurrentWeather() {
   const {wrapper, container, temp, feels, highlowWrapper, highlow, bodyWrapper, description, message, image} = styles
   return (
     <SafeAreaView style={wrapper}>
         <ImageBackground 
-            source={require('../../../assets/cloud.jpg')} 
+            source={require('../../assets/cloud.jpg')} 
             style={image}
         >  
       <View style={container}>

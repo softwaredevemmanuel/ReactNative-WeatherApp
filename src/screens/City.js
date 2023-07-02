@@ -8,7 +8,7 @@ import {
     View
 } from "react-native";
 import {Feather} from '@expo/vector-icons'
-import IconText from "../IconText";
+import IconText from "../components/IconText";
 
 
 
@@ -29,7 +29,7 @@ export default function City() {
   return (
     <SafeAreaView style={container}>
         <ImageBackground 
-            source={require('../../../assets/cloud.jpg')} 
+            source={require('../../assets/cloud.jpg')} 
             style = {imageLayout}>
             
             <View style = {styles.section}>

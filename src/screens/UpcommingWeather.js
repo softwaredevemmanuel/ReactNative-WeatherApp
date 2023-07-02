@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, FlatList, StatusBar, ImageBackground} from 'react-native'
-import Listitem from '../Listitem'
+import Listitem from '../components/Listitem'
 const DATA = [
           {
             dt_txt: "2022-08-30 16:00:00",
@@ -56,7 +56,7 @@ export default function UpcommingWeather() {
   return (
     <SafeAreaView style={container}>
         <ImageBackground 
-            source={require('../../../assets/cloud.jpg')} 
+            source={require('../../assets/cloud.jpg')} 
             style={image}
         >   
         <Text style={styles.header}> Upcoming Weather</Text> 

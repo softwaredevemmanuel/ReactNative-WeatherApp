@@ -1,7 +1,7 @@
 import React from 'react';
-import CurrentWeather from '../components/screens/CurrentWeather';
-import UpcommingWeather from '../components/screens/UpcommingWeather';
-import City from '../components/screens/City';
+import CurrentWeather from '../screens/CurrentWeather';
+import UpcommingWeather from '../screens/UpcommingWeather';
+import City from '../screens/City';
 import RowText from '../components/RowText';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
