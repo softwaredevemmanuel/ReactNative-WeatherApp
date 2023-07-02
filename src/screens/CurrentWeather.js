@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground} from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import RowText from '../components/RowText';
+import { weatherType } from '../utilities/weatherType';
 
 export default function CurrentWeather() {
   const {wrapper, container, temp, feels, highlowWrapper, highlow, bodyWrapper, description, message, image} = styles
@@ -28,7 +29,7 @@ export default function CurrentWeather() {
       </View>
       <RowText 
             messageOne={'Its Sunny'} 
-            messageTwo={'Its Perfect t-shirt weather'} 
+            messageTwo={weatherType['Thunderstorm'].message} 
             containerStyles={bodyWrapper} 
             messageOneStyles={description} 
             messageTwoStyles={message}
