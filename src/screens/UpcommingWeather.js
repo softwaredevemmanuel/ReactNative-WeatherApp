@@ -1,50 +1,9 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, FlatList, StatusBar, ImageBackground} from 'react-native'
+import { SafeAreaView, StyleSheet, FlatList, StatusBar, ImageBackground} from 'react-native'
 import Listitem from '../components/Listitem'
-const DATA = [
-          {
-            dt_txt: "2022-08-30 16:00:00",
-            main: {
-                temp_max: 296.31,
-                temp_min: 296.2,
-            },
-            weather: [
-              {
-                main: "y",
-              
-              }
-            ]
-        },
-        {
-            dt_txt: "2022-08-30 16:00:01",
-            main: {
-                temp_max: 296.31,
-                temp_min: 296.2,
-            },
-            weather: [
-              {
-                main: "Rain",
-              
-              }
-            ]
-        },
-        {
-            dt_txt: "2022-08-30 16:00:02",
-            main: {
-                temp_max: 296.31,
-                temp_min: 296.2,
-            },
-            weather: [
-              {
-                main: "Cloud",
-              
-              }
-            ]
-        },   
-        
-]
 
-export default function UpcommingWeather() {
+
+export default function UpcommingWeather({weatherData}) {
     const renderItem = ({item})=>(
         <Listitem 
         condition={item.weather[0].main} 
@@ -59,10 +18,9 @@ export default function UpcommingWeather() {
             source={require('../../assets/cloud.jpg')} 
             style={image}
         >   
-        <Text style={styles.header}> Upcoming Weather</Text> 
 
       <FlatList
-        data={DATA}
+        data={weatherData}
         renderItem={renderItem}
         keyExtractor={(item) => item.dt_txt}
       />

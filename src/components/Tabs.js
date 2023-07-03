@@ -51,7 +51,6 @@ export default function Tabs({ weather }) {
 
       <Tab.Screen
         name={'Upcoming'}
-        component={UpcommingWeather}
         options={{
           tabBarIcon: ({ focused }) => (
             <Feather
@@ -61,7 +60,11 @@ export default function Tabs({ weather }) {
             />
           )
         }} 
-      />
+        >
+        
+        {() => <UpcommingWeather weatherData = {weather.list}/>}
+
+      </Tab.Screen>
 
       <Tab.Screen
         name={'City'}
