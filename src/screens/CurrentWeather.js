@@ -17,7 +17,7 @@ export default function CurrentWeather({weatherData}) {
     message,
     image
   } = styles
-  
+
   console.log(weatherData)
 
   const { main: {
@@ -46,8 +46,8 @@ export default function CurrentWeather({weatherData}) {
           <Text style={feels}>{`Feels like ${feels_like}`}</Text>
 
           <RowText
-            messageOne={`High: ${temp_max}`}
-            messageTwo={`Low: ${temp_min}`}
+            messageOne={`High: ${temp_max}° `}
+            messageTwo={`Low: ${temp_min}°`}
             containerStyles={highlowWrapper}
             messageOneStyles={highlow}
             messageTwoStyles={highlow}

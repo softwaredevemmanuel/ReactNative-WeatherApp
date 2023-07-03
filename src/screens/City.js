@@ -9,10 +9,12 @@ import {
 } from "react-native";
 import {Feather} from '@expo/vector-icons'
 import IconText from "../components/IconText";
+import moment from 'moment'
 
 
 
-export default function City() {
+
+export default function City(weatherData) {
     const {
         container, 
         cityName, 
@@ -26,6 +28,9 @@ export default function City() {
         imageLayout
     } = styles
 
+    const {name, country, population, sunrise, sunset} = weatherData
+    console.log(population)
+
   return (
     <SafeAreaView style={container}>
         <ImageBackground 
@@ -33,13 +38,13 @@ export default function City() {
             style = {imageLayout}>
             
             <View style = {styles.section}>
-                <Text style={[cityName, cityText]}>London</Text>
-                <Text style={[countryName, cityText]}>UKs</Text>
+                <Text style={[cityName, cityText]}>{name}</Text>
+                <Text style={[countryName, cityText]}>{country}</Text>
                 <View style={[populationWrapper, rowLayout]}>
                     <IconText 
                     iconName = {'user'} 
                     iconColor = {'white'} 
-                    bodyText={8000} 
+                    bodyText={`Population: ${population}`} 
                     bodyTextStyles={populationText}/>
 
                 </View>
@@ -47,14 +52,14 @@ export default function City() {
                     <IconText 
                         iconName={'sunrise'} 
                         iconColor={'white'} 
-                        bodyText={'10:46:58am'} 
+                        bodyText={moment(sunrise).format('h:mm:ss a')} 
                         bodyTextStyles={riseSetText}/>
 
                     
                     <IconText 
                         iconName={'sunset'} 
                         iconColor={'black'} 
-                        bodyText={'17:46:58pm'} 
+                        bodyText={moment(sunset).format('h:mm:ss a')} 
                         bodyTextStyles={riseSetText}/>
                 
 

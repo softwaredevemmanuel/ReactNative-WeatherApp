@@ -68,7 +68,6 @@ export default function Tabs({ weather }) {
 
       <Tab.Screen
         name={'City'}
-        component={City}
         options={{
           tabBarIcon: ({ focused }) => (
             <Feather
@@ -78,8 +77,11 @@ export default function Tabs({ weather }) {
             />
           )
         }} 
-      />
+        >
+        
+        {() => <City weatherData = {weather.city}/>}
 
+      </Tab.Screen>
     </Tab.Navigator>
   )
 }
