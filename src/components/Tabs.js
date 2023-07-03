@@ -48,6 +48,7 @@ export default function Tabs({ weather }) {
 
       </Tab.Screen>
 
+
       <Tab.Screen
         name={'Upcoming'}
         component={UpcommingWeather}
