@@ -4,8 +4,21 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import RowText from '../components/RowText';
 import { weatherType } from '../utilities/weatherType';
 
-export default function CurrentWeather() {
-  const {wrapper, container, temp, feels, highlowWrapper, highlow, bodyWrapper, description, message, image} = styles
+export default function CurrentWeather(weatherData) {
+  const {
+    wrapper, 
+    container, 
+    temp, 
+    feels, 
+    highlowWrapper, 
+    highlow, 
+    bodyWrapper, 
+    description, 
+    message, 
+    image
+  } = styles
+
+  console.log(weatherData)
   return (
     <SafeAreaView style={wrapper}>
         <ImageBackground 
